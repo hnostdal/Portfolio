@@ -1,0 +1,14 @@
+{
+  "name": "modern_portfolio",
+  "version": "1.0.0",
+  "description": "Modern Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w sccs/ -o dist/css/ --recursive"
+  },
+  "author": "Hermann Nøstdal",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
