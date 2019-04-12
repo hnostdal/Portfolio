@@ -12,7 +12,7 @@
     background: #fff;
     transition: all 0.5s ease-out; }
   .menu-btn.close {
-    transform: rotate(10deg); }
+    transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px); }
     .menu-btn.close .btn-line:nth-child(2) {
@@ -55,7 +55,7 @@
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background: url("../img/portrait.jpg");
+      background: url("../img/hermann.jpg");
       border-radius: 50%;
       border: solid 3px #eece1a; }
   .menu .nav-item {
@@ -94,7 +94,7 @@
   box-sizing: border-box; }
 
 body {
-  background-color: #444;
+  background: #444;
   color: #fff;
   height: 100%;
   margin: 0;
@@ -128,7 +128,7 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: #494949 0.5; }
+    background: rgba(73, 73, 73, 0.5); }
 
 a {
   color: #fff;
@@ -144,15 +144,14 @@ header {
 
 main {
   padding: 4rem;
-  min-height: calc(100vh- 60px); }
-  main .icon {
+  min-height: calc(100vh - 60px); }
+  main .icons {
     margin-top: 1rem; }
-    main .icon a {
+    main .icons a {
       padding: 0.4rem;
       transition: all 0.5s ease-out; }
-      main .icon a:hover {
-        color: #eece1a;
-        transition: all 0.5s ease-out; }
+      main .icons a:hover {
+        color: #eece1a; }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -178,9 +177,57 @@ main {
   .about-info .job-3 {
     grid-area: job3; }
   .about-info .job {
-    background: ligten(#444, 5);
+    background: #515151;
     padding: 0.5rem;
     border-bottom: #eece1a 5px solid; }
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects img {
+    width: 100%;
+    border: 3px #fff solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #eece1a;
+      transition: all 0.5s ease-out; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
+      background: #eece1a;
+      color: #000; }
+      .boxes div:hover span {
+        color: #000; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #eece1a;
+    color: #000; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #c4c4c4;
+  color: #333; }
 
 #main-footer {
   text-align: center;
@@ -188,6 +235,14 @@ main {
   background: #2b2b2b;
   color: #fff;
   height: 60px; }
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -197,12 +252,12 @@ main {
       line-height: 1;
       margin-bottom: 1rem; }
   ul.menu-nav,
-  div.meny-branding {
+  div.menu-branding {
     float: none;
     width: 100%;
     min-height: 0; }
     ul.menu-nav.show,
-    div.meny-branding.show {
+    div.menu-branding.show {
       transform: translate3d(0, 0, 0); }
   .menu-nav {
     height: 75vh;
@@ -213,12 +268,21 @@ main {
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
       background: url("../img/portrait_small.jpg");
-      width: 15px;
+      width: 150px;
       height: 150px; }
   .about-info {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; } }
+  main {
+    padding: 2rem; }
+    main #home h1 {
+      margin-top: 10vh; }
+    main .lg-heading {
+      margin-top: 1rem;
+      font-size: 5rem; }
+  .projects {
+    grid-template-columns: 1fr; } }
